@@ -5,24 +5,43 @@ public:
         int n=word2.size();
         int i=0;
         int j=0;
-        string arr="";
-        while(i<m && j<n)
+
+                            // without extra space
+
+        while(i<word1.size() && j<n)
         {
-            arr.push_back(word1[i++]);
-            arr.push_back(word2[j++]);
-            // i++;
-            // j++;
+            word1.insert(i+1,1,word2[j]);
+            i=i+2;
+            j++;
         }
-        while(i<m)
+
+        while (j < n)
         {
-            arr.push_back(word1[i++]);
-            // i++;
+            word1+=word2[j];
+            j++;
+            i++;
         }
-        while(j<n)
-        {
-            arr.push_back(word2[j++]);
-            // j++;
-        }
-        return arr;
+        return word1;
     }
 };
+
+
+                                // with extra space
+
+        // string word3 = "";
+        // while (i<m && j<n)
+        // {
+        //     word3.push_back(word1[i++]);
+        //     word3.push_back(word2[j++]);
+        // }
+        // while (i < m)
+        // {
+        //     word3.push_back(word1[i++]);
+        // }
+        // while (j < n)
+        // {
+        //     word3.push_back(word2[j++]);
+        // }
+        // return word3;
+//     }
+// };
